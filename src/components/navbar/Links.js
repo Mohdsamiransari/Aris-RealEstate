@@ -21,12 +21,10 @@ export const Links = () => {
         </Link>
       </li>
       {!isAuthenticatedUser?"":
-      <li>
-        {userData.user.role === "admin"?<Link to="/sell" className="hover:text-xl  ">
+      <li className={userData.user.role === "admin"?"block":"hidden"}>
+        <Link to="/sell" className="hover:text-xl  ">
           Sell
-        </Link>:""}
-      
-        
+        </Link>
       </li>
       }
         
