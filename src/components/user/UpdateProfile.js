@@ -58,21 +58,22 @@ export const UpdateProfile = () => {
   };
 
   return (
+    <div className="w-full h-full  flex items-center justify-center">
     <form
-      className="basis-full flex flex-col  w-3/6 ml-12 relative top-[50%] -translate-y-44 gap-8"
+      className=" flex flex-col  h-3/6  w-1/2 gap-8  mt-20"
       onSubmit={handleSubmit}
     >
       <Helmet>
         <title>Aris - UpdateProfile</title>
       </Helmet>
       
-      <h3 className="font-semibold -ml-4">Update Your Details </h3>
+      <h3 className="font-semibold -ml-4">Update Profile </h3>
       <div className="flex  justify-between">
         <div className=" ">
           <p>First Name</p>
           <input
             type="text"
-            placeholder="MOHD"
+            placeholder="first name"
             className="mt-1 border-b-2 border-gray-500 px-1"
             onChange={(e) => setFirstName(e.target.value)}
           />
@@ -81,7 +82,7 @@ export const UpdateProfile = () => {
           <p>Last Name:</p>
           <input
             type="text"
-            placeholder="Samir"
+            placeholder="last name"
             className="mt-1 border-b-2 border-gray-500 px-1"
             onChange={(e) => setLastName(e.target.value)}
           />
@@ -92,7 +93,7 @@ export const UpdateProfile = () => {
           <p>Number</p>
           <input
             type="tel"
-            placeholder="7521884782"
+            placeholder="number"
             className="mt-1 border-b-2 border-gray-500 px-1"
             onChange={(e) => setNumber(e.target.value)}
           />
@@ -101,7 +102,7 @@ export const UpdateProfile = () => {
           <p>Address</p>
           <input
             type="text"
-            placeholder="Enter Your Address"
+            placeholder="Address"
             className="mt-1 border-b-2 border-gray-500 px-1 w-full"
             onChange={(e) => setAddress(e.target.value)}
           />
@@ -113,9 +114,10 @@ export const UpdateProfile = () => {
           type="submit"
           className="border px-12 py-2 bg-slate-800 text-white rounded-md hover:bg-slate-900"
         >
-          Save
+          Save Changes
         </button>
       </div>
     </form>
+    </div>
   );
 };
