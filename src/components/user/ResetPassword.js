@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 import { Helmet } from "react-helmet";
 export const ResetPassword = () => {
   let params = useParams();
@@ -11,7 +11,7 @@ export const ResetPassword = () => {
   const [post, setPosts] = useState([]);
 
   const forgotPassword = async (password, confirmPassword) => {
-    await fetch(`${URL}resetPassword/${params.token}`, {
+    await fetch(`${URLS}resetPassword/${params.token}`, {
       method: "POST",
       credentials: "include",
 

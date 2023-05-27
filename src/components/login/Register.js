@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProfileIllustration from '../../assets/ProfileIllustration.jpg'
 import { Helmet } from "react-helmet";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 
 export const Register = ({ open }) => {
@@ -29,7 +29,7 @@ export const Register = ({ open }) => {
     address,
     password
   ) => {
-    await fetch(`${URL}newUser`, {
+    await fetch(`${URLS}newUser`, {
       method: "POST",
       body: JSON.stringify({
         username: username,
@@ -97,15 +97,16 @@ export const Register = ({ open }) => {
     <Helmet>
       <title>Aris - Register</title>
     </Helmet>
+      <div className="h-20"></div>
       <div className="h-screen w-full flex items-center ">
         <form
-          className=" w-9/12 mx-auto grid grid-cols-2 h-[80%] mt-12 shadow-lg shadow-slate-900 items-center rounded-xl"
+          className=" w-9/12 max-sm:w-11/12 mx-auto grid grid-cols-2 max-sm:grid-cols-1 h-[80%] max-sm:h-full mt-12 shadow-lg shadow-slate-900 items-center rounded-xl"
           onSubmit={handleSubmit}
         >
-          <div className="w-full text-sm font-semibold p-5 h-[89%]">
+          <div className="w-full text-sm font-semibold p-5 h-[89%] max-sm:h-full ">
             <label
               htmlFor="Avatar"
-              className="block  font-bold mb-2 cursor-pointer w-[90%] h-[95%] bg-red-200 text-gray-700 text-sm rounded-full"
+              className="block cursor-pointer w-[90%] max-sm:w-full h-[95%] max-sm:h-full  rounded-full"
             >
               {!selectedAvatar ? (
                 <div className="bg-cover w-full h-full rounded-full"
@@ -128,7 +129,7 @@ export const Register = ({ open }) => {
               onChange={onImageChange}
             />
           </div>
-          <div className=" w-5/6">
+          <div className=" w-5/6 max-sm:h-1/2 ">
             <div className="mb-2">
               <label
                 htmlFor="username"

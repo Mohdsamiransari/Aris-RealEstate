@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineBathroom, MdOutlineBedroomParent } from "react-icons/md";
 import { BsTextarea } from "react-icons/bs";
-import {URL} from '../Url'
+import {URLS} from '../Url'
 
 export const Card = () => {
   const [propertyapi, setProperty] = useState([]);
 
   const getProperty = async () => {
-    let response = await fetch(`${URL}property`);
+    let response = await fetch(`${URLS}property`);
     const prop = await response.json();
     setProperty(prop.product);
   };

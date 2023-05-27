@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { URLS } from "../Url";
 
 export const UpdateProfile = () => {
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [number, setNumber] = useState("");
-  const [alternateNumber, setAlternateNumber] = useState("");
+  const [phoneNumber, setNumber] = useState("");
   const [address, setAddress] = useState("");
   const [post, setPosts] = useState([]);
 
   const updateUserProfile = async (
     firstName,
     lastName,
-    number,
-    alternateNumber,
+    phoneNumber,
     address
   ) => {
-    await fetch(`${URL}update/userProfile`, {
+    await fetch(`${URLS}update/userProfile`, {
       method: "PUT",
       credentials: "include",
       headers: {
@@ -29,8 +28,7 @@ export const UpdateProfile = () => {
       body: JSON.stringify({
         firstName: firstName,
         lastName: lastName,
-        number: number,
-        alternateNumber: alternateNumber,
+        phoneNumber: phoneNumber,
         address: address,
       }),
     })
@@ -41,7 +39,6 @@ export const UpdateProfile = () => {
         setFirstName("");
         setLastName("");
         setNumber("");
-        setAlternateNumber("");
         setAddress("");
 
         if (data.success === true) {
@@ -54,18 +51,19 @@ export const UpdateProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateUserProfile(firstName, lastName, number, alternateNumber, address);
+    updateUserProfile(firstName, lastName, phoneNumber, address);
   };
 
   return (
     <div className="w-full h-full  flex items-center justify-center">
+      <Helmet>
+        <title>Aris - UpdateProfile</title>
+      </Helmet>
     <form
       className=" flex flex-col  h-3/6  w-1/2 gap-8  mt-20"
       onSubmit={handleSubmit}
     >
-      <Helmet>
-        <title>Aris - UpdateProfile</title>
-      </Helmet>
+      
       
       <h3 className="font-semibold -ml-4">Update Profile </h3>
       <div className="flex  justify-between">
@@ -75,6 +73,7 @@ export const UpdateProfile = () => {
             type="text"
             placeholder="first name"
             className="mt-1 border-b-2 border-gray-500 px-1"
+            value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
         </div>
@@ -84,6 +83,7 @@ export const UpdateProfile = () => {
             type="text"
             placeholder="last name"
             className="mt-1 border-b-2 border-gray-500 px-1"
+            value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
@@ -95,6 +95,7 @@ export const UpdateProfile = () => {
             type="tel"
             placeholder="number"
             className="mt-1 border-b-2 border-gray-500 px-1"
+            value={phoneNumber}
             onChange={(e) => setNumber(e.target.value)}
           />
         </div>
@@ -104,6 +105,7 @@ export const UpdateProfile = () => {
             type="text"
             placeholder="Address"
             className="mt-1 border-b-2 border-gray-500 px-1 w-full"
+            value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
         </div>

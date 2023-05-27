@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 export const Sell = () => {
   const [name, setPropertyName] = useState("");
@@ -26,7 +26,7 @@ export const Sell = () => {
     bathroom,
     squareFoot
   ) => {
-    await fetch(`${URL}newProperty`, {
+    await fetch(`${URLS}newProperty`, {
       method: "POST",
       credentials: "include",
 

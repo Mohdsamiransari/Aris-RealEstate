@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { UserInfoDetail } from "./UserInfoDetail";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 export const UserInfo = () => {
   //const items = JSON.parse(localStorage.getItem("auth"));
   const [userData, setData] = useState([]);
   const userLogin = async () => {
-    let res = await fetch(`${URL}userProfile`, {
+    let res = await fetch(`${URLS}userProfile`, {
       method: "POST",
       credentials: "include",
       headers: {

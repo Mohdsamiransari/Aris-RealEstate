@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { HiOutlineHome } from "react-icons/hi";
 import { MdOutlineBathroom, MdOutlineBedroomParent } from "react-icons/md";
 import { BsTextarea } from "react-icons/bs";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 export const PropertyDetail = () => {
   const [propertyapi, setProperty] = useState([]);
   const [activeTab, setActiveTab] = useState(null);
 
   const getProperty = async () => {
-    let response = await fetch(`${URL}property`);
+    let response = await fetch(`${URLS}property`);
     const prop = await response.json();
     setProperty(prop.product);
     setActiveTab(prop.product[0]);

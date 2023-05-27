@@ -4,7 +4,7 @@ import { MdOutlineBathroom, MdOutlineBedroomParent } from "react-icons/md";
 import { BsTextarea } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 export const PropertyDetail = () => {
   let params = useParams();
@@ -13,7 +13,7 @@ export const PropertyDetail = () => {
 
   const getPropertyId = async () => {
     let response = await fetch(
-      `${URL}singleProperty/${params._id}`
+      `${URLS}singleProperty/${params._id}`
     );
     const prop = await response.json();
     setPropertyId(prop.product);
@@ -22,7 +22,7 @@ export const PropertyDetail = () => {
 
   const getProperty = async () => {
     let response = await fetch(
-      `${URL}property?propertyCategory=${propertyfilter}`
+      `${URLS}property?propertyCategory=${propertyfilter}`
     );
     const data = await response.json();
     setProperty(data.product);

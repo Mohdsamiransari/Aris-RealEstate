@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 
 export const Login = () => {
@@ -11,7 +11,7 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const userLogin = async (email, password) => {
-    await fetch(`${URL}Userlogin`, {
+    await fetch(`${URLS}Userlogin`, {
       method: "POST",
       crossDomain: "true",
       headers: {

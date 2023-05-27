@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { MdOutlineBathroom, MdOutlineBedroomParent } from "react-icons/md";
 import { BsTextarea } from "react-icons/bs";
 import { Helmet } from "react-helmet";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 
 const Property = () => {
@@ -62,7 +62,7 @@ const Property = () => {
   // Fetching property from the database using fetch api
   useEffect(() => {
     const getProperty = async () => {
-      let url = `${URL}property?keyword=${search}`;
+      let url = `${URLS}property?keyword=${search}`;
       if (category !== "All") {
         url += `&propertyCategory=${category}`;
       }

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserInfo } from "./UserInfo";
 import { Helmet } from "react-helmet";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 
 export const ChangePassword = () => {
@@ -13,7 +12,7 @@ export const ChangePassword = () => {
   const navigate = useNavigate;
 
   const UpdatePassword = async (currentPassword, newPassword) => {
-    await fetch(`${URL}updatePassword`, {
+    await fetch(`${URLS}updatePassword`, {
       method: "PUT",
       credentials: "include",
       headers: {
@@ -32,7 +31,7 @@ export const ChangePassword = () => {
         setCurrentPassword("");
         setNewPassword("");
         if (data.success === true) {
-          alert("Hello");
+          navigate('/login')
         }
       });
   };

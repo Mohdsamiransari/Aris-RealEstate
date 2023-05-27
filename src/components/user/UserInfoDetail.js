@@ -27,7 +27,7 @@ export const UserInfoDetail = ({ userinfoprop }) => {
         </div>
         <div>
           <p>Address</p>
-          <p className="mt-1 border-b-2 border-gray-500 w-48  px-1 text-start text-gray-600 font-semibold">
+          <p className="mt-1 border-b-2 border-gray-500 w-48  px-1 text-start text-gray-600 font-semibold truncate">
             {userinfoprop.address}
           </p>
         </div>

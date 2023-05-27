@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../../assets/logo.png";
 import { MdFacebook } from "react-icons/md";
 import { BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";
 import { Links } from "../navbar/Links";

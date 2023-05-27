@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import { URL } from "../Url";
+import { URLS } from "../Url";
 
 export const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [post, setPosts] = useState("");
 
   const forgotPassword = async (email) => {
-    await fetch(`${URL}reset`, {
+    await fetch(`${URLS}reset`, {
       method: "POST",
       credentials: "include",
 

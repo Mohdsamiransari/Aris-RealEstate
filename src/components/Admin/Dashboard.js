@@ -3,7 +3,7 @@ import { MdOutlineBathroom, MdOutlineBedroomParent } from "react-icons/md";
 import { BsTextarea } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import {URL} from '../Url'
+import {URLS} from '../Url'
 export const Dashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(4);
@@ -63,7 +63,7 @@ export const Dashboard = () => {
   }, [propertyapi, search, minPrice, maxPrice, category]);
 
   const getProperty = async () => {
-    let url = `${URL}property?keyword=${search}`;
+    let url = `${URLS}property?keyword=${search}`;
     if (category !== "All") {
       url += `&propertyCategory=${category}`;
     }
