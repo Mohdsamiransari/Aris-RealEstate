@@ -9,6 +9,7 @@ import { URLS } from "../Url";
 const Property = () => {
   // for all types of filtering
   // getting the values and storing it
+  console.log(URLS)
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [search, setSearch] = useState("");

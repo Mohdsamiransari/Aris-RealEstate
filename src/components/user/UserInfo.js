@@ -5,8 +5,9 @@ import { URLS } from "../Url";
 export const UserInfo = () => {
   //const items = JSON.parse(localStorage.getItem("auth"));
   const [userData, setData] = useState([]);
+  console.log(userData)
   const userLogin = async () => {
-    let res = await fetch(`${URLS}userProfile`, {
+    const res = await fetch(`${URLS}userProfile`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -29,7 +30,8 @@ export const UserInfo = () => {
         {/*Username and Email */}
         <div className={"basis-2/6 flex gap-5 items-center"}>
           <div
-            className="w-24 h-24  rounded-full ml-8 bg-cover"
+            className={userData.avatar?"w-24 h-24  rounded-full ml-8 bg-cover":"hidden"}
+            
             style={{ backgroundImage: `url(${userData.avatar})` }}
           ></div>
           <div>
