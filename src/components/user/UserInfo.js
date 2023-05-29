@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { UserInfoDetail } from "./UserInfoDetail";
+import ProfileIllustration from '../../assets/ProfileIllustration.jpg'
+
 import { URLS } from "../Url";
 
 export const UserInfo = () => {
@@ -7,8 +9,9 @@ export const UserInfo = () => {
   const [userData, setData] = useState([]);
   console.log(userData)
   const userLogin = async () => {
-    const res = await fetch(`${URLS}userProfile`, {
-      method: "POST",
+    let url = `${URLS}userProfile`;
+    const res = await fetch(url, {
+      method: "GET",
       credentials: "include",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -27,12 +30,12 @@ export const UserInfo = () => {
   return (
     <div className="flex w-full h-full p-3 items-end">
       <div className="w-full  h-[89%] flex flex-col ">
-        {/*Username and Email */}
+        {/* Username and Email */}
         <div className={"basis-2/6 flex gap-5 items-center"}>
           <div
-            className={userData.avatar?"w-24 h-24  rounded-full ml-8 bg-cover":"hidden"}
+            className="w-24 h-24  rounded-full ml-8 bg-cover"
             
-            style={{ backgroundImage: `url(${userData.avatar})` }}
+            style={{ backgroundImage: `url(${userData.avatar?userData.avatar:ProfileIllustration})` }}
           ></div>
           <div>
             <h1 className="text-2xl">{userData.username}</h1>

@@ -57,10 +57,9 @@ export const Login = () => {
         <div className=" basis-1/6"></div>
         <div className=" basis-full flex items-center ">
           <div className="w-9/12 h-[92%]  mx-auto flex  items-center flex-col  font-sans bg-transparent ">
-            <div className="w-11/12 h-20 text-sm font-semibold flex justify-between items-center "></div>
             <h1 className="text-2xl font-semibold ">Log In</h1>
 
-            <div className="w-[75%] basis-[60%] flex p-5 gap-5">
+            <div className="w-[75%] basis-[60%] flex max-lg:flex-col p-5 gap-5">
               <form
                 className=" flex flex-col  justify-center  basis-4/6 p-4 gap-5 text-sm "
                 onSubmit={handleSubmit}
@@ -106,7 +105,7 @@ export const Login = () => {
                 </button>
               </form>
 
-              <p className="basis-10 flex items-center text-xs font-semibold text-gray-600">
+              <p className="basis-10 flex items-center justify-center text-xs font-semibold text-gray-600">
                 OR
               </p>
               <div className="flex flex-col basis-4/6  px-4 gap-5 justify-center text-sm font-semibold ">

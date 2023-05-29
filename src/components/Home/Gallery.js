@@ -10,7 +10,7 @@ export const Gallery = () => {
     threshold: 0.2,
   });
   return (
-    <div className="w-full h-screen flex justify-center items-center ">
+    <div className="w-full h-screen  flex justify-center items-center overflow-hidden">
       <div
         ref={ref}
         className="w-10/12 h-5/6 grid grid-cols-4 grid-rows-2 gap-3 max-lg:grid-cols-2 max-lg:grid-rows-4  "

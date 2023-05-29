@@ -128,7 +128,7 @@ export const Dashboard = () => {
       <Helmet>
         <title>Aris - DashBoard</title>
       </Helmet>
-      <div className="w-full h-[80%] ">
+      <div className="w-full h-[80%]">
         {/********************** Handling all type of Filterings  **************************/}
         <div className="mb-5 flex justify-between mx-auto items-center max-sm:gap-4 max-sm:flex-col-reverse">
           <div className="flex gap-2">
@@ -177,8 +177,8 @@ export const Dashboard = () => {
         </div>
 
         {/*----------------------------------- Showing the properties using  loop------------------------- */}
-        <div className=" grid mx-auto mt-14">
-          <div className="grid-cols-4 max-md:grid-cols-1 max-xl:grid-cols-2 gap-5 grid mx-auto items-center justify-center">
+        <div className=" grid mx-auto mt-14 overflow-y-auto appearance-none scrollbar-none  h-[25rem]">
+          <div className="grid-cols-4 max-md:grid-cols-1 max-xl:grid-cols-3 max-lg:grid-cols-2 gap-5 grid mx-auto items-center justify-center">
             {/********************************* The currentItems that is mapping is actually getting the "propertyapi" value from  the fetch api */}
             {currentItems.map((i) => (
               <div
@@ -197,8 +197,8 @@ export const Dashboard = () => {
                   <h1 className="mb-1  text-2xl font-extrabold">
                     {i.desciption}
                   </h1>
-                  <p className="text-sm mb-1">{i.name}</p>
-                  <p className="text-sm mb-1  ">{i.address}</p>
+                  <p className="text-sm mb-1 ">{i.name}</p>
+                  <p className="text-sm mb-1 truncate ">{i.address}</p>
                   <div className="flex justify-between pr-2 text-xs">
                     <p>${i.price}</p>
                     <div className="flex gap-2">

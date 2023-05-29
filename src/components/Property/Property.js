@@ -135,7 +135,7 @@ const Property = () => {
         <iframe
           title="google-map"
           loading="lazy"
-          className="overflow-hidden bg-none h-screen  w-full"
+          className="overflow-hidden bg-none h-full   w-full"
           src={`https://maps.google.com/maps?q=${"Handia"}, alla&t=&z=11&ie=UTF8&iwloc=&output=embed`}
         ></iframe>
       </div>
@@ -143,7 +143,7 @@ const Property = () => {
       <div className="h-fit mt-10">
         {/********************** Handling all type of Filterings  **************************/}
         <div className="mb-5 flex justify-between mx-auto w-11/12 items-center max-sm:gap-4 max-sm:flex-col-reverse">
-          <div className="flex  gap-2 items-center place-self-start">
+          <div className="flex  gap-2 items-center place-self-start max-md:hidden">
             <label>Sort by:</label>
             <select className=" w-48 px-4 py-2  rounded-md border border-gray-400 focus:outline-none hover:shadow-md hover:shadow-slate-800">
               <option>Date new to old</option>
@@ -154,7 +154,7 @@ const Property = () => {
           </div>
 
           {/********************* Category Filter  */}
-          <div className="place-self-start">
+          <div className="place-self-start ">
             <label for="Category">Category: </label>
             <select
               id="Category"
@@ -169,7 +169,7 @@ const Property = () => {
               ))}
             </select>
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center ">
             <label for="Min Price">Min Price: </label>
             <input
               type="tel"
@@ -187,9 +187,9 @@ const Property = () => {
               className="  w-32 px-4 py-2  rounded-md border border-gray-400 focus:outline-none hover:shadow-md hover:shadow-slate-800"
             />
           </div>
-          <div className="rounded-3xl">
+          <div className="rounded-3xl place-self-start">
             <input
-              className="appearance-none w-96 px-4 py-2 mr-2 rounded-md border border-gray-400 focus:outline-none hover:shadow-md hover:shadow-slate-800"
+              className="appearance-none w-96 max-sm:w-82 px-4 py-2 mr-2 rounded-md border border-gray-400 focus:outline-none hover:shadow-md hover:shadow-slate-800"
               type="search"
               placeholder="Search"
               onChange={handleSearchFilter}

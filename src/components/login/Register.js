@@ -100,7 +100,7 @@ export const Register = ({ open }) => {
       <div className="h-20"></div>
       <div className="h-screen w-full flex items-center ">
         <form
-          className=" w-9/12 max-sm:w-11/12 mx-auto grid grid-cols-2 max-sm:grid-cols-1 h-[80%] max-sm:h-full mt-12 shadow-lg shadow-slate-900 items-center rounded-xl"
+          className=" w-9/12 max-sm:w-11/12 mx-auto grid grid-cols-2 max-lg:grid-cols-1 h-[80%] max-sm:h-full mt-12 shadow-lg shadow-slate-900 items-center rounded-xl"
           onSubmit={handleSubmit}
         >
           <div className="w-full text-sm font-semibold p-5 h-[89%] max-sm:h-full ">

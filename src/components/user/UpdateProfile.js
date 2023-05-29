@@ -66,7 +66,7 @@ export const UpdateProfile = () => {
       
       
       <h3 className="font-semibold -ml-4">Update Profile </h3>
-      <div className="flex  justify-between">
+      <div className="flex gap-5 justify-between">
         <div className=" ">
           <p>First Name</p>
           <input
@@ -88,7 +88,7 @@ export const UpdateProfile = () => {
           />
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex gap-5 justify-between">
         <div className=" ">
           <p>Number</p>
           <input

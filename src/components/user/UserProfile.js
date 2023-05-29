@@ -67,7 +67,7 @@ const UserProfile = () => {
               </ul>
             </div>
             {!isAuthenticatedUser?"":
-            <div className={userData.user.role === "admin"?"flex items-center":"hidden"}>
+            <div className={userData.user.role === "admin"?"":"hidden"}>
               <h2 className="font-semibold">Admin</h2>
               <ul>
                 <li className="flex items-center "><Buttons label="DashBoard" onClick={() => changeContent(4)} /></li>

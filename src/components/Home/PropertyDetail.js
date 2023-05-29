@@ -12,7 +12,7 @@ export const PropertyDetail = () => {
     let response = await fetch(`${URLS}property`);
     const prop = await response.json();
     setProperty(prop.product);
-    setActiveTab(prop.product[0]);
+    setActiveTab(prop.product[1]);
   };
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export const PropertyDetail = () => {
         )}
 
         <div className="grid w-1/2 max-lg:w-5/6 max-sm:w-full  grid-cols-7 gap-2 h-[20%]  relative">
-          {propertyapi.slice(0, 3).map((index, i) => (
+          {propertyapi.slice(1, 4).map((index, i) => (
             <img
               key={i._id}
               src={index.image}
